@@ -15,7 +15,10 @@ steps:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run build
+- task: Bash@3
   displayName: 'npm install and build'
+  inputs:
+    targetType: 'inline'
+    script: |
+      npm install
+      npm run build
