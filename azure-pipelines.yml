@@ -16,9 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - task: Bash@3
-  displayName: 'npm install and build'
+  displayName: 'Install dependencies'
   inputs:
     targetType: 'inline'
     script: |
+      node --version
+      npm --version
+      ls -la
       npm install
-      npm run build
